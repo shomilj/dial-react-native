@@ -1,17 +1,21 @@
 import { StyleSheet } from "react-native";
+import { TEXT_GRAY } from "../Constants";
 
 export const styles = StyleSheet.create({
   container: {
+    flex: 1,
     display: "flex",
-    flexDirection: "row",
+    flexDirection: "column",
+    backgroundColor: "white",
   },
   headerRow: {
-    marginVertical: 20,
+    paddingVertical: 20,
     paddingBottom: 20,
     borderBottomWidth: 0.5,
-    marginHorizontal: 20,
+    paddingHorizontal: 20,
     borderBottomColor: "#dfe6e9",
     flexDirection: "row",
+    backgroundColor: "white",
   },
   headerLogo: {
     height: 40,
@@ -28,5 +32,8 @@ export const styles = StyleSheet.create({
   headerRightButton: {
     marginRight: 16,
     marginLeft: "auto",
+  },
+  scrollView: {
+    margin: 10,
   },
 });

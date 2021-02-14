@@ -3,32 +3,35 @@ import { TEXT_GRAY } from "../Constants";
 
 export const styles = StyleSheet.create({
   container: {
+    marginTop: 10,
+    marginHorizontal: 5,
+    flex: 1,
     display: "flex",
     flexDirection: "row",
-    padding: 20,
     borderBottomWidth: 0.5,
     borderBottomColor: "#dfe6e9",
   },
   leftColumn: {
     flex: 1,
     flexDirection: "row",
-    maxWidth: "5%",
-    minWidth: "5%",
+    maxWidth: "8%",
+    minWidth: "8%",
+    marginLeft: 20,
     height: "auto",
     justifyContent: "center",
     alignItems: "baseline",
   },
   rightColumn: {
+    flex: 1,
     display: "flex",
     flexDirection: "column",
     height: "auto",
-    paddingRight: 20,
   },
   profilePic: {
     marginTop: 5,
     borderRadius: 20,
-    height: 40,
-    width: 40,
+    height: 45,
+    width: 45,
   },
 
   // Top Row
@@ -71,9 +74,9 @@ export const styles = StyleSheet.create({
   },
   tweetText: {
     fontFamily: "Avenir",
-    fontWeight: "300",
+    fontWeight: "400",
     marginHorizontal: 10,
-    fontSize: 15,
+    fontSize: 16,
     lineHeight: 21
   },
 
@@ -82,7 +85,8 @@ export const styles = StyleSheet.create({
     flexDirection: "row",
     justifyContent: "space-between",
     marginVertical: 5,
-    marginHorizontal: 10
+    marginHorizontal: 10,
+    marginBottom: 10
   },
   bottomRowItem: {
     marginHorizontal: 10,
