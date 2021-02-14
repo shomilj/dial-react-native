@@ -3,5 +3,9 @@ import React from "react";
 import { EntryStackScreen } from "./screens/EntryStackScreen";
 
 export default function App() {
-  return <NavigationContainer>{EntryStackScreen()}</NavigationContainer>;
+  return (
+    <NavigationContainer>
+      <EntryStackScreen />
+    </NavigationContainer>
+  );
 }

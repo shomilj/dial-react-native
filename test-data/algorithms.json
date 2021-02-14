@@ -3,44 +3,67 @@
     "title": "Most popular feeds",
     "algorithms": [
       {
+        "key": "memes",
         "title": "Memes & \nGen-Z Humor",
         "publisher": "Niky Arora",
-        "image": "https://static01.nyt.com/images/2021/01/22/world/21xp-sanders-meme/21xp-sanders-meme-articleLarge-v4.jpg?quality=75&auto=webp&disable=upscale",
-        "description": "This dial shows you meme-focused content first! If you want to look for memes, turn up this dial."
+        "stars": "3K",
+        "rating": "4.6",
+        "image": "https://i.etsystatic.com/17713529/r/il/63c89f/2814718768/il_1588xN.2814718768_ffg5.jpg",
+        "description": "This feed shows you meme-focused content first! If you want to look for memes, turn up this feed."
+      },
+      {
+        "key": "virality",
+        "title": "Virality",
+        "publisher": "Niky Arora",
+        "stars": "3K",
+        "rating": "4.6",
+        "image": "https://imagesvc.meredithcorp.io/v3/mm/image?url=https%3A%2F%2Fstatic.onecms.io%2Fwp-content%2Fuploads%2Fsites%2F9%2F2020%2F05%2F27%2Ftimes-square-billboards-going-dark-FT-BLOG0520.jpg",
+        "description": "This  feed shows you the most viral content first. Virality is measured using replies, retweets, and likes!"
+      },
+      {
+        "key": "learning",
+        "title": "Learning",
+        "stars": "3K",
+        "rating": "4.6",
+        "image": "https://images-na.ssl-images-amazon.com/images/I/714sdCHaMvL._AC_SL1116_.jpg",
+        "description": "This feed prioritizes content that attempts to teach you something about the material that you're browsing! Try searching for a keyword, like $GME."
       }
     ]
   },
   {
-    "title": "Most popular feeds",
+    "title": "Influencer-curated",
     "algorithms": [
       {
-        "title": "Memes & \nGen-Z Humor",
-        "publisher": "Niky Arora",
-        "image": "https://static01.nyt.com/images/2021/01/22/world/21xp-sanders-meme/21xp-sanders-meme-articleLarge-v4.jpg?quality=75&auto=webp&disable=upscale",
-        "description": "This dial shows you meme-focused content first! If you want to look for memes, turn up this dial."
+        "key": "influencer-elonmusk",
+        "title": "Elon Musk",
+        "stars": "3K",
+        "rating": "4.6",
+        "image": "https://www.businessinsider.in/photo/80871526/elon-musk-predicts-austin-texas-will-be-the-biggest-boom-town-that-america-has-seen-in-50-years.jpg?imgsize=289208",
+        "description": "This algorithm will surface tweets in and around Elon Musk's network."
       },
       {
-        "title": "Memes & \nGen-Z Humor",
-        "publisher": "Niky Arora",
-        "image": "https://static01.nyt.com/images/2021/01/22/world/21xp-sanders-meme/21xp-sanders-meme-articleLarge-v4.jpg?quality=75&auto=webp&disable=upscale",
-        "description": "This dial shows you meme-focused content first! If you want to look for memes, turn up this dial."
+        "key": "influencer-vp",
+        "title": "Kamala Harris",
+        "stars": "3K",
+        "rating": "4.6",
+        "image": "https://static.politico.com/dims4/default/d058b5f/2147483647/resize/1160x%3E/quality/90/?url=https%3A%2F%2Fstatic.politico.com%2Fc7%2F15%2F697b1c714eed82a1e7f4fd9bd696%2Fkamala-2-gty-773.jpg",
+        "description": "This algorithm will surface tweets in and around Vice President Kamala Harris's network."
       },
       {
-        "title": "Memes & \nGen-Z Humor",
-        "publisher": "Niky Arora",
-        "image": "https://static01.nyt.com/images/2021/01/22/world/21xp-sanders-meme/21xp-sanders-meme-articleLarge-v4.jpg?quality=75&auto=webp&disable=upscale",
-        "description": "This dial shows you meme-focused content first! If you want to look for memes, turn up this dial."
-      }
-    ]
-  },
-  {
-    "title": "Most popular feeds",
-    "algorithms": [
+        "key": "influencer-satyanadella",
+        "title": "Satya Nadella",
+        "stars": "3K",
+        "rating": "4.6",
+        "image": "https://cdn.vox-cdn.com/thumbor/Y0aNjojGxPz1bWBsT5cYJmSlXbU=/0x0:640x427/1200x800/filters:focal(0x0:640x427)/cdn.vox-cdn.com/assets/3666711/satyanadella.jpg",
+        "description": "This algorithm will surface tweets in and around Satya Nadella's network."
+      },
       {
-        "title": "Memes & \nGen-Z Humor",
-        "publisher": "Niky Arora",
-        "image": "https://static01.nyt.com/images/2021/01/22/world/21xp-sanders-meme/21xp-sanders-meme-articleLarge-v4.jpg?quality=75&auto=webp&disable=upscale",
-        "description": "This dial shows you meme-focused content first! If you want to look for memes, turn up this dial."
+        "key": "influencer-stephencurry30",
+        "title": "Stephen Curry",
+        "stars": "3K",
+        "rating": "4.6",
+        "image": "https://img.bleacherreport.net/img/images/photos/003/837/262/hi-res-898820109b89ef00942b098ff10379b6_crop_north.jpg?1573244951&w=3072&h=2048",
+        "description": "This algorithm will surface tweets in and around Satya Nadella's network."
       }
     ]
   }

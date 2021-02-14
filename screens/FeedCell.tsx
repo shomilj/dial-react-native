@@ -30,7 +30,7 @@ export const FeedCell = ({ tweet }: { tweet: TweetModel }) => {
       <View style={styles.rightColumn}>
         <View style={styles.topRow}>
           <Text style={styles.tweetAuthor}>{tweet.name}</Text>
-          {verifiedBadge}
+          {verifiedBadge()}
           <Text style={styles.tweetUsername}>
             {"@" + tweet.username + " • " + getTimeAgo(tweet.created_at)}
           </Text>

@@ -64,10 +64,10 @@ export const styles = StyleSheet.create({
     borderRadius: 8,
   },
   algoCellImage: {
-    height: 120,
+    height: 160,
     width: "100%",
-    borderTopStartRadius: 8,
-    borderTopEndRadius: 8,
+    borderTopLeftRadius: 8,
+    borderTopRightRadius: 8,
     resizeMode: "cover",
   },
   algoCellTitle: {
@@ -97,12 +97,8 @@ export const styles = StyleSheet.create({
   algoCellActivateText: {
     marginHorizontal: 5,
     fontFamily: "Avenir",
-    color: TEXT_PRIMARY,
+    color: TEXT_DARK_GRAY,
     fontSize: 12,
     fontWeight: "800",
-  },
-  algoCellMoreButton: {
-    marginRight: 16,
-    marginLeft: "auto",
   },
 });

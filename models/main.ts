@@ -24,4 +24,10 @@ export interface AlgoModel {
   publisher: string;
   description: string;
   image: string;
+  stars: number;
+  rating: number;
+}
+
+export interface UserModel {
+  algo: string;
 }
