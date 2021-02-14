@@ -10,7 +10,7 @@ if (firebase.apps.length == 0) {
 }
 
 export function EntryStackScreen() {
-  const [initializing, setInitializing] = useState(false);
+  const [initializing, setInitializing] = useState(true);
   const [user, setUser] = useState<firebase.User | null>(null);
 
   useEffect(() => {

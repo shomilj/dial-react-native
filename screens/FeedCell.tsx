@@ -55,7 +55,7 @@ export const FeedCell = ({ tweet }: { tweet: TweetModel }) => {
               size={20}
               color={TEXT_GRAY}
             />
-            <Text style={styles.bottomRowText}>{tweet.nreplies}</Text>
+            <Text style={styles.bottomRowText}>{tweet.nretweets}</Text>
           </View>
           <View style={styles.bottomRowItem}>
             <Ionicons
@@ -64,7 +64,7 @@ export const FeedCell = ({ tweet }: { tweet: TweetModel }) => {
               size={20}
               color={TEXT_GRAY}
             />
-            <Text style={styles.bottomRowText}>{tweet.nreplies}</Text>
+            <Text style={styles.bottomRowText}>{tweet.nlikes}</Text>
           </View>
           <View style={styles.bottomRowItem}>
             <Ionicons

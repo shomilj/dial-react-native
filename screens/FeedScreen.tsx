@@ -112,12 +112,6 @@ export const FeedScreen = ({ navigation }: any) => {
             </View>
           </View>
           <TouchableOpacity
-            style={styles.headerRightButton}
-            onPress={() => setSearchVisible(!searchVisible)}
-          >
-            <Ionicons name="search-outline" size={25} color={TEXT_PRIMARY} />
-          </TouchableOpacity>
-          <TouchableOpacity
             style={{ ...styles.headerRightButton, marginLeft: 5 }}
             onPress={() => navigation.navigate("GalleryStackScreen")}
           >
