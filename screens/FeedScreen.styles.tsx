@@ -1,5 +1,5 @@
 import { StyleSheet } from "react-native";
-import { TEXT_GRAY } from "../Constants";
+import { TEXT_DARK_GRAY, TEXT_GRAY, TEXT_PRIMARY } from "../Constants";
 
 export const styles = StyleSheet.create({
   container: {
@@ -28,6 +28,22 @@ export const styles = StyleSheet.create({
     fontSize: 30,
     fontWeight: "700",
     marginHorizontal: 15,
+  },
+  subtitleOne: {
+    fontFamily: "Avenir",
+    fontSize: 14,
+    fontWeight: "300",
+    marginLeft: 15,
+    marginTop: 5,
+    color: TEXT_DARK_GRAY
+  },
+  subtitleTwo: {
+    fontFamily: "Avenir",
+    fontSize: 14,
+    fontWeight: "700",
+    marginLeft: 0,
+    marginTop: 5,
+    color: TEXT_PRIMARY
   },
   headerRightButton: {
     marginRight: 16,

@@ -35,6 +35,7 @@ export const AlgoScreen = ({ route, navigation }: any) => {
     if (currentUser) {
       firebase.firestore().collection("users").doc(currentUser.uid).set({
         algo: item.key,
+        subtitle: item.subtitle
       });
     }
   };

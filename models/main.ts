@@ -26,8 +26,10 @@ export interface AlgoModel {
   image: string;
   stars: number;
   rating: number;
+  subtitle: string;
 }
 
 export interface UserModel {
   algo: string;
+  subtitle: string;
 }

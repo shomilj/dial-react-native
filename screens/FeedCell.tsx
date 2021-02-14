@@ -21,12 +21,12 @@ export const FeedCell = ({ tweet }: { tweet: TweetModel }) => {
   };
   return (
     <View style={styles.container}>
-      <View style={styles.leftColumn}>
+      {/* <View style={styles.leftColumn}>
         <Image
           source={require("../assets/icon.png")}
           style={styles.profilePic}
         />
-      </View>
+      </View> */}
       <View style={styles.rightColumn}>
         <View style={styles.topRow}>
           <Text style={styles.tweetAuthor}>{tweet.name}</Text>

@@ -3,26 +3,49 @@
     "title": "Most popular feeds",
     "algorithms": [
       {
-        "key": "memes",
-        "title": "Memes & \nGen-Z Humor",
-        "publisher": "Niky Arora",
-        "stars": "3K",
-        "rating": "4.6",
-        "image": "https://i.etsystatic.com/17713529/r/il/63c89f/2814718768/il_1588xN.2814718768_ffg5.jpg",
-        "description": "This feed shows you meme-focused content first! If you want to look for memes, turn up this feed."
-      },
-      {
-        "key": "virality",
+        "key": "viral",
+        "subtitle": "Virality",
         "title": "Virality",
         "publisher": "Niky Arora",
         "stars": "3K",
         "rating": "4.6",
         "image": "https://imagesvc.meredithcorp.io/v3/mm/image?url=https%3A%2F%2Fstatic.onecms.io%2Fwp-content%2Fuploads%2Fsites%2F9%2F2020%2F05%2F27%2Ftimes-square-billboards-going-dark-FT-BLOG0520.jpg",
-        "description": "This  feed shows you the most viral content first. Virality is measured using replies, retweets, and likes!"
+        "description": "This feed shows you the most viral content first. Virality is measured using replies, retweets, and likes!"
       },
       {
-        "key": "learning",
+        "key": "controversial",
+        "subtitle": "Controversy",
+        "title": "Controversial",
+        "publisher": "Niky Arora",
+        "stars": "3K",
+        "rating": "4.6",
+        "image": "https://static01.nyt.com/images/2020/04/27/us/politics/00-trump-cand-page/00-trump-cand-page-mediumSquareAt3X.jpg",
+        "description": "This feed shows you controversial tweets first! Controversy is measured by a combination of quote tweets & polarity analysis."
+      },
+      {
+        "key": "verified",
+        "subtitle": "Verified Users",
+        "title": "Verified",
+        "publisher": "Niky Arora",
+        "stars": "3K",
+        "rating": "4.6",
+        "image": "https://thumbs.dreamstime.com/b/continuous-line-drawing-layered-vector-file-isolated-white-background-walking-team-professionals-talking-158664986.jpg",
+        "description": "This feed only shows you tweets from verified users."
+      },
+      {
+        "key": "positive",
+        "title": "Positive",
+        "subtitle": "Positivity",
+        "publisher": "Niky Arora",
+        "stars": "3K",
+        "rating": "4.6",
+        "image": "https://cdn.mos.cms.futurecdn.net/wtqqnkYDYi2ifsWZVW2MT4-1200-80.jpg",
+        "description": "This feed prioritizes positive content. It's powered by OpenAI's private beta."
+      },
+      {
+        "key": "explained",
         "title": "Learning",
+        "subtitle": "Learning",
         "stars": "3K",
         "rating": "4.6",
         "image": "https://images-na.ssl-images-amazon.com/images/I/714sdCHaMvL._AC_SL1116_.jpg",
@@ -36,6 +59,7 @@
       {
         "key": "influencer-elonmusk",
         "title": "Elon Musk",
+        "subtitle": "Elon Musk's Network",
         "stars": "3K",
         "rating": "4.6",
         "image": "https://www.businessinsider.in/photo/80871526/elon-musk-predicts-austin-texas-will-be-the-biggest-boom-town-that-america-has-seen-in-50-years.jpg?imgsize=289208",
@@ -44,6 +68,7 @@
       {
         "key": "influencer-vp",
         "title": "Kamala Harris",
+        "subtitle": "Kamala Harris's Network",
         "stars": "3K",
         "rating": "4.6",
         "image": "https://static.politico.com/dims4/default/d058b5f/2147483647/resize/1160x%3E/quality/90/?url=https%3A%2F%2Fstatic.politico.com%2Fc7%2F15%2F697b1c714eed82a1e7f4fd9bd696%2Fkamala-2-gty-773.jpg",
@@ -52,6 +77,7 @@
       {
         "key": "influencer-satyanadella",
         "title": "Satya Nadella",
+        "subtitle": "Satya Nadella's Network",
         "stars": "3K",
         "rating": "4.6",
         "image": "https://cdn.vox-cdn.com/thumbor/Y0aNjojGxPz1bWBsT5cYJmSlXbU=/0x0:640x427/1200x800/filters:focal(0x0:640x427)/cdn.vox-cdn.com/assets/3666711/satyanadella.jpg",
@@ -61,6 +87,7 @@
         "key": "influencer-stephencurry30",
         "title": "Stephen Curry",
         "stars": "3K",
+        "subtitle": "Steph Curry's Network",
         "rating": "4.6",
         "image": "https://img.bleacherreport.net/img/images/photos/003/837/262/hi-res-898820109b89ef00942b098ff10379b6_crop_north.jpg?1573244951&w=3072&h=2048",
         "description": "This algorithm will surface tweets in and around Satya Nadella's network."

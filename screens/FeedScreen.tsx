@@ -20,8 +20,8 @@ export const FeedScreen = ({ navigation }: any) => {
   const [tweets, setTweets] = useState<[TweetModel] | null>(null);
   const [user, setUser] = useState<UserModel | null>(null);
   const [searchVisible, setSearchVisible] = useState(false);
-  const [search, setSearch] = useState("gme");
-  const [loading, setLoading] = useState(false);
+  const [search, setSearch] = useState("");
+  const [loading, setLoading] = useState(true);
   const [editingDone, setEditingDone] = useState(0);
 
   useEffect(() => {
@@ -39,7 +39,8 @@ export const FeedScreen = ({ navigation }: any) => {
             "Unable to get user document - might be a new user. Write to Firebase."
           );
           ref.set({
-            algo: "virality",
+            algo: "viral",
+            subtitle: "Virality",
           });
         }
       });
@@ -52,17 +53,21 @@ export const FeedScreen = ({ navigation }: any) => {
     // In reality, we want to use user.algo & make a POST request.
     if (user) {
       setLoading(true);
-      fetch("https://us-central1-dial-000.cloudfunctions.net/query_tweets", {
+      fetch("http://192.168.86.58:5000/query_tweets", {
         method: "POST",
         headers: {
           Accept: "application/json",
           "Content-Type": "application/json",
         },
-        body: JSON.stringify({ algo: "controversial", keyword: search }),
+        body: JSON.stringify({ algo: user.algo, keyword: search }),
       })
         .then((data) => data.json())
         .then((data) => {
-          setTweets(data);
+          if (data.error) {
+            console.log("ERROR: ", data.error);
+          } else {
+            setTweets(data);
+          }
           setLoading(false);
         })
         .catch((error) => {
@@ -77,35 +82,35 @@ export const FeedScreen = ({ navigation }: any) => {
   };
 
   const searchBar = () => {
-    if (searchVisible) {
-      return (
-        <SearchBar
-          placeholder="Search..."
-          style={{ fontFamily: "Avenir" }}
-          containerStyle={{ backgroundColor: "white" }}
-          inputContainerStyle={{ backgroundColor: "white" }}
-          lightTheme={true}
-          round={true}
-          onChangeText={setSearch}
-          onEndEditing={() => setEditingDone(editingDone + 1)}
-          showLoading={loading}
-          value={search}
-        />
-      );
-    } else {
-      return null;
-    }
+    return (
+      <SearchBar
+        placeholder="Search..."
+        style={{ fontFamily: "Avenir" }}
+        containerStyle={{ backgroundColor: "white" }}
+        inputContainerStyle={{ backgroundColor: "white" }}
+        lightTheme={true}
+        round={true}
+        onChangeText={(text) => setSearch(text)}
+        onEndEditing={() => setEditingDone(editingDone + 1)}
+        showLoading={loading}
+        value={search || ""}
+      />
+    );
   };
 
   const headerItem = () => {
     return (
       <View>
         <View style={styles.headerRow}>
-          <Image
-            style={styles.headerLogo}
-            source={require("../assets/icon.png")}
-          />
-          <Text style={styles.headerTitle}>Feed</Text>
+          <View style={{ flex: 1, flexDirection: "column" }}>
+            <Text style={styles.headerTitle}>Feed</Text>
+            <View style={{ flexDirection: "row" }}>
+              <Text style={styles.subtitleOne}>Prioritizing </Text>
+              <Text style={styles.subtitleTwo}>
+                {(user && user.subtitle) || "Virality"}
+              </Text>
+            </View>
+          </View>
           <TouchableOpacity
             style={styles.headerRightButton}
             onPress={() => setSearchVisible(!searchVisible)}

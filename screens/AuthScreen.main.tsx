@@ -80,7 +80,7 @@ export const AuthScreen = () => {
 
   return (
     <SafeAreaView style={styles.container}>
-      <Image source={logo} style={styles.logo}></Image>
+      <Image source={logo} style={styles.logo} />
       <Text style={styles.title}>Feeds</Text>
       {appleButton()}
     </SafeAreaView>

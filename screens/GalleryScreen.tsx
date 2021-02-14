@@ -55,7 +55,8 @@ export const GalleryScreen = ({ navigation }: any) => {
         .collection("users")
         .doc(currentUser.uid)
         .set({
-          'algo': item.key
+          'algo': item.key,
+          'subtitle': item.subtitle
         })
     }
   }
