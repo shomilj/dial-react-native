@@ -1,5 +1,7 @@
 # Feeds - an open-sourced App Store for algorithmic choice
 
+![Image](https://github.com/shomilj/feeds-react-native/blob/master/docs/screens.jpg?raw=true)
+
 Video Demo: https://www.youtube.com/embed/kAC-ixuRSv4
 
 ## Inspiration
