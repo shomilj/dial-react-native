@@ -7,26 +7,69 @@ import {
   Text,
   TouchableOpacity,
 } from "react-native";
-import { TweetModel, UserModel } from "../models/main";
-import { FeedCell } from "./FeedCell";
+import { TweetModel, UserModel } from "../../../../models/main";
+import { FeedCell } from "./components/FeedCell.main";
 import { Ionicons } from "@expo/vector-icons";
 import { styles } from "./FeedScreen.styles";
-import { TEXT_GRAY, TEXT_PRIMARY } from "../Constants";
+import { TEXT_GRAY, TEXT_PRIMARY } from "../../../../Constants";
 import firebase from "firebase/app";
 import "firebase/firestore";
 import { SearchBar } from "react-native-elements";
 
+/* FeedScreen is the main feed of Tweets. It makes an API request to our 
+    backend with whatever algorithm & search queries the user has entered;
+    then, it loads the tweets it gets back.
+
+    A couple of notes –
+
+      0. First, to preface this, when we're using Firebase, there are two different
+          locations where users are tracked. There's the "Authentication" user object,
+          which is created and maintained by Firebase. That object is accessible via:
+            
+            firebase.auth().currentUser;
+
+          That object only contains a few basic fields, like email/displayName/uid/etc.
+          Whenever we need access to the User's UID (unique identifier), we can access
+          it using that object:
+
+            const uid = firebase.auth().currentUser.uid;
+
+          There's also the user node in the "users" collection in Firestore, which
+          is something that we can choose to create when the user's account is created
+          for the first time. This is where we actually store data associated with
+          this user, such as (in this app) the algorithm they have currently selected.
+          We access this object using an observer on the following reference:
+
+            const userRef = firebase.firestore().collection("users").doc(uid);
+
+            ... proceed to fetch or observe data at userRef using Firestore methods
+
+      1. (First useEffect) 
+          On this page, we observe the model corresponding to this user 
+          in the "users" collection of Firestore. The only data point we track 
+          per user is the algorithm that they've currently selected, so if they open up
+          another device & sign in, their algorithm stay in sync across devices. 
+          If we see an update to this user object in Firestore, we update the local 
+          [user, setUser] state variable.
+          
+      2. (Second useEffect) 
+          Whenever the user's selected algorithm or the search query changes, we want to
+          re-query a list of tweets, using the new algorithm and/or search query as our
+          parameters. 
+
+*/
+
 export const FeedScreen = ({ navigation }: any) => {
-  const [tweets, setTweets] = useState<[TweetModel] | null>(null);
+  // Notice how the type of this state variable is either "null" or an array of TweetModel
+  const [tweets, setTweets] = useState<TweetModel[] | null>(null);
   const [user, setUser] = useState<UserModel | null>(null);
-  const [searchVisible, setSearchVisible] = useState(false);
   const [search, setSearch] = useState("");
   const [loading, setLoading] = useState(true);
   const [editingDone, setEditingDone] = useState(0);
 
   useEffect(() => {
-    // Observe the user object & sync it locally.
-    // The only thing we store in the user object is the "algo" that they choose.
+    // Runs once when this component mounts.
+    // Gets the current user identifier
     const currentUser = firebase.auth().currentUser;
     if (currentUser) {
       const ref = firebase.firestore().collection("users").doc(currentUser.uid);
@@ -46,14 +89,15 @@ export const FeedScreen = ({ navigation }: any) => {
       });
       return unsubscribe;
     }
-  }, [setUser]);
+  }, []);
 
   useEffect(() => {
-    // For now, populate our tweets with dummy data.
-    // In reality, we want to use user.algo & make a POST request.
+    // Run this every time the user's selected algorithm (which lies in the user model)
+    // or the currently entered search value changes (but only when editing is done, e.g. the
+    // user hits "return" after entering a search query).
     if (user) {
       setLoading(true);
-      fetch("http://192.168.86.58:5000/query_tweets", {
+      fetch("http://localhost:5000/query_tweets", {
         method: "POST",
         headers: {
           Accept: "application/json",
@@ -77,7 +121,7 @@ export const FeedScreen = ({ navigation }: any) => {
     }
   }, [user, editingDone]);
 
-  const renderItem = ({ item, index }: any) => {
+  const renderItem = ({ item }: { item: TweetModel }) => {
     return <FeedCell tweet={item} />;
   };
 
@@ -98,7 +142,7 @@ export const FeedScreen = ({ navigation }: any) => {
     );
   };
 
-  const headerItem = () => {
+  const HeaderItem = () => {
     return (
       <View>
         <View style={styles.headerRow}>
@@ -128,13 +172,13 @@ export const FeedScreen = ({ navigation }: any) => {
   };
   return (
     <SafeAreaView style={styles.container}>
-      {headerItem()}
+      <HeaderItem />
       <FlatList
         data={tweets}
         renderItem={renderItem}
         style={styles.scrollView}
         showsVerticalScrollIndicator={false}
-        keyExtractor={(item, index) => {
+        keyExtractor={(_, index) => {
           return "item-" + index;
         }}
       />

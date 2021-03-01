@@ -1,6 +1,6 @@
 import React from "react";
 import { createStackNavigator } from "@react-navigation/stack";
-import { FeedScreen } from "./FeedScreen";
+import { FeedScreen } from "./FeedScreen/FeedScreen.main";
 
 const MainStack = createStackNavigator();
 

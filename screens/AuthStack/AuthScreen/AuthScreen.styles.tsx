@@ -9,10 +9,11 @@ export const styles = StyleSheet.create({
     flexDirection: "column",
   },
   logo: {
-    height: "20%",
-    width: "80%",
+    height: 150,
+    width: 150,
     marginTop: "30%",
     resizeMode: "contain",
+    borderRadius: 30,
   },
   subtitle: {
     fontFamily: "Avenir",
@@ -51,8 +52,8 @@ export const styles = StyleSheet.create({
       width: 0,
       height: 1,
     },
-    shadowOpacity: 0.10,
-    shadowRadius: 3.50,
+    shadowOpacity: 0.1,
+    shadowRadius: 3.5,
     elevation: 5,
   },
   googleButtonPng: {

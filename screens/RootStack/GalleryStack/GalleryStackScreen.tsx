@@ -1,7 +1,7 @@
 import React from "react";
 import { createStackNavigator } from "@react-navigation/stack";
-import { GalleryScreen } from "./GalleryScreen";
-import { AlgoScreen } from "./AlgoScreen";
+import { GalleryScreen } from "./GalleryScreen/GalleryScreen.main";
+import { AlgoScreen } from "./AlgoScreen/AlgoScreen.main";
 
 const GalleryStack = createStackNavigator();
 

@@ -1,5 +1,5 @@
 import { StyleSheet } from "react-native";
-import { TEXT_GRAY } from "../Constants";
+import { TEXT_GRAY } from "../../../../../Constants";
 
 export const styles = StyleSheet.create({
   container: {

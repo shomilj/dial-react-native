@@ -1,15 +1,19 @@
 import React, { useEffect, useState } from "react";
 import { FlatList, SafeAreaView, View, Image, Text } from "react-native";
 import { Ionicons } from "@expo/vector-icons";
-import { TEXT_DARK_GRAY, TEXT_GRAY, TEXT_PRIMARY } from "../Constants";
-import { AlgoCategoryModel, AlgoModel, UserModel } from "../models/main";
+import { TEXT_DARK_GRAY, TEXT_PRIMARY } from "../../../../Constants";
+import {
+  AlgoCategoryModel,
+  AlgoModel,
+  UserModel,
+} from "../../../../models/main";
 import { styles } from "./GalleryScreen.styles";
 import { TouchableOpacity } from "react-native-gesture-handler";
 import firebase from "firebase/app";
 import "firebase/firestore";
 
 export const GalleryScreen = ({ navigation }: any) => {
-  const algorithms = require("../test-data/algorithms.json");
+  const algorithms = require("../../../../test-data/algorithms.json");
 
   // The User Block
   const [user, setUser] = useState<UserModel | null>(null);
@@ -50,16 +54,12 @@ export const GalleryScreen = ({ navigation }: any) => {
   const selectedAlgo = (item: AlgoModel) => {
     const currentUser = firebase.auth().currentUser;
     if (currentUser) {
-      firebase
-        .firestore()
-        .collection("users")
-        .doc(currentUser.uid)
-        .set({
-          'algo': item.key,
-          'subtitle': item.subtitle
-        })
+      firebase.firestore().collection("users").doc(currentUser.uid).set({
+        algo: item.key,
+        subtitle: item.subtitle,
+      });
     }
-  }
+  };
 
   const renderAlgo = ({ item }: { item: AlgoModel }) => {
     return (
@@ -76,7 +76,10 @@ export const GalleryScreen = ({ navigation }: any) => {
         ></Image>
         <Text style={styles.algoCellTitle}>{item.title}</Text>
         <Text style={styles.algoCellSubtitle}>23K Installs • 4.6 Stars</Text>
-        <TouchableOpacity style={styles.algoCellButtonView} onPress={() => selectedAlgo(item)}>
+        <TouchableOpacity
+          style={styles.algoCellButtonView}
+          onPress={() => selectedAlgo(item)}
+        >
           <Ionicons
             style={styles.algoCellActivateButton}
             name={

@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from "react";
 import { SafeAreaView, View, Text, Image } from "react-native";
 import { Ionicons } from "@expo/vector-icons";
-import { TEXT_DARK_GRAY, TEXT_PRIMARY } from "../Constants";
+import { TEXT_DARK_GRAY, TEXT_PRIMARY } from "../../../../Constants";
 import { ScrollView, TouchableOpacity } from "react-native-gesture-handler";
 import { styles } from "./AlgoScreen.styles";
-import { AlgoModel, UserModel } from "../models/main";
+import { AlgoModel, UserModel } from "../../../../models/main";
 import firebase from "firebase/app";
 import "firebase/firestore";
 

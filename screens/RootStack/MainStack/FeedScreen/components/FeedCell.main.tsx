@@ -1,17 +1,20 @@
 import { Ionicons } from "@expo/vector-icons";
-import React, { useState } from "react";
-import { FlatList, View, Text, Image } from "react-native";
-import { TEXT_GRAY } from "../Constants";
-import { TweetModel } from "../models/main";
-import { getTimeAgo } from "../utils/time";
+import React from "react";
+import { View, Text, Image } from "react-native";
+import { TEXT_GRAY } from "../../../../../Constants";
+import { TweetModel } from "../../../../../models/main";
+import { getTimeAgo } from "../../../../../utils/time";
 import { styles } from "./FeedCell.styles";
 
+/* FeedCell is a single cell in the list of tweets. This component is pretty
+    simple - it's just a view structure with several containers that 
+    define the cell layout. It takes in a TweetModel as a prop. */
 export const FeedCell = ({ tweet }: { tweet: TweetModel }) => {
   const verifiedBadge = () => {
     if (tweet.verified) {
       return (
         <Image
-          source={require("../assets/verified.png")}
+          source={require("../../../../../assets/verified.png")}
           style={styles.verifiedBadge}
         />
       );
@@ -21,12 +24,6 @@ export const FeedCell = ({ tweet }: { tweet: TweetModel }) => {
   };
   return (
     <View style={styles.container}>
-      {/* <View style={styles.leftColumn}>
-        <Image
-          source={require("../assets/icon.png")}
-          style={styles.profilePic}
-        />
-      </View> */}
       <View style={styles.rightColumn}>
         <View style={styles.topRow}>
           <Text style={styles.tweetAuthor}>{tweet.name}</Text>
