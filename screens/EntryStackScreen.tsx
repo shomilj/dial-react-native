@@ -64,10 +64,7 @@ export function EntryStackScreen() {
   if (initializing) {
     return <View />;
   } else if (!user) {
-    // Temporary flip to RootStackScreen() for testing.
-    // This should be AuthStackScreen() if you want to go through
-    // the Sign In Flow.
-    return RootStackScreen();
+    return AuthStackScreen();
   } else {
     return RootStackScreen();
   }

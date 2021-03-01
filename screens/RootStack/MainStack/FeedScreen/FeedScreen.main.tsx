@@ -92,12 +92,24 @@ export const FeedScreen = ({ navigation }: any) => {
   }, []);
 
   useEffect(() => {
-    // Run this every time the user's selected algorithm (which lies in the user model)
-    // or the currently entered search value changes (but only when editing is done, e.g. the
-    // user hits "return" after entering a search query).
+    /* This code block runs every time the user's selected algorithm (which lies in the user model)
+        or the currently entered search value changes (but only when editing is done, e.g. when
+        the user hits "return" after entering a search query).
+    
+        What exactly is going on here? We're making a POST Request to a backend that we've
+        set up (aside: it's a Firebase Cloud Function!).
+
+        This API endpoint takes in an algorithm and a keyword, and returns a list of tweets that
+        we can then dispaly to this user. We can think of it like a black box, where we give it 
+        some well-defined inputs & expect some results.
+        
+        Notice how the call to fetch() returns a promise, which we resolve using .then() and .catch()
+        syntax. 
+    */
     if (user) {
       setLoading(true);
-      fetch("http://localhost:5000/query_tweets", {
+      // change to localhost:5000 for testing
+      fetch("http://192.168.86.28:5000/query_tweets", {
         method: "POST",
         headers: {
           Accept: "application/json",
@@ -107,6 +119,8 @@ export const FeedScreen = ({ navigation }: any) => {
       })
         .then((data) => data.json())
         .then((data) => {
+          // At this point, the network request has finished, and we can handle
+          // the object that we received from the backend.
           if (data.error) {
             console.log("ERROR: ", data.error);
           } else {
@@ -115,6 +129,8 @@ export const FeedScreen = ({ navigation }: any) => {
           setLoading(false);
         })
         .catch((error) => {
+          // Something went wrong in the network request, and we should
+          // handle that error somehow.
           console.log(error);
           setLoading(false);
         });

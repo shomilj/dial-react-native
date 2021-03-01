@@ -8,7 +8,15 @@ import { AlgoModel, UserModel } from "../../../../models/main";
 import firebase from "firebase/app";
 import "firebase/firestore";
 
+/* AlgoScreen is the overview page for a specific algorithm. If a user
+    taps on an algorithm card on GalleryScreen, it will take them to this
+    screen, which contains a more detailed overview of the algorithm. There's also
+    a "Select this Algorithm" button at the bottom of this view. 
+
+    Functionally, this component has much of the same logic as GalleryScreen, so take 
+    a look at that screen's comment to understand what's going on here. */
 export const AlgoScreen = ({ route, navigation }: any) => {
+  // This screen is passed an algorithm from the GalleryScreen.
   const { algo }: { algo: AlgoModel } = route.params;
 
   // The User Block
@@ -35,7 +43,7 @@ export const AlgoScreen = ({ route, navigation }: any) => {
     if (currentUser) {
       firebase.firestore().collection("users").doc(currentUser.uid).set({
         algo: item.key,
-        subtitle: item.subtitle
+        subtitle: item.subtitle,
       });
     }
   };
@@ -71,11 +79,24 @@ export const AlgoScreen = ({ route, navigation }: any) => {
             {algo.stars} Stars • {algo.rating} Rating
           </Text>
           <Text style={styles.description}>{algo.description}</Text>
+          {/* One interesting thing - note the conditional formatting here using the ternery operator "?" */}
           <TouchableOpacity
-            style={user?.algo === algo.key ? styles.algoCellButtonViewActive : styles.algoCellButtonViewNotActive}
+            style={
+              user?.algo === algo.key
+                ? styles.algoCellButtonViewActive
+                : styles.algoCellButtonViewNotActive
+            }
             onPress={() => selectedAlgo(algo)}
           >
-            <Text style={user?.algo === algo.key ? styles.algoCellActivateTextActive : styles.algoCellActivateTextNotActive}>{user?.algo === algo.key ? "Activated" : "Activate"}</Text>
+            <Text
+              style={
+                user?.algo === algo.key
+                  ? styles.algoCellActivateTextActive
+                  : styles.algoCellActivateTextNotActive
+              }
+            >
+              {user?.algo === algo.key ? "Activated" : "Activate"}
+            </Text>
           </TouchableOpacity>
         </View>
       </ScrollView>
