@@ -2,7 +2,9 @@
 
 ![Image](https://github.com/shomilj/feeds-react-native/blob/master/docs/screens.jpg?raw=true)
 
+Contributors: [Niky Arora](https://www.linkedin.com/in/nikhararora/) & [Shomil Jain](https://www.linkedin.com/in/shomiljain/)
 Video Demo: https://www.youtube.com/embed/kAC-ixuRSv4
+Backend Project: https://github.com/shomilj/feeds-backend
 
 ## Inspiration
 This past year, we've seen the effects of uncontrolled algorithmic amplification on society. From widespread [riot-inciting misinformation on Facebook](https://www.theverge.com/2020/3/17/21183341/facebook-misinformation-report-nathalie-marechal) to the explosive growth of TikTok - a platform that serves content [entirely on a black-box algorithm](https://www.wired.com/story/tiktok-finally-explains-for-you-algorithm-works/), we've reached a point where [social media algorithms rule how we see the world](https://www.wsj.com/articles/social-media-algorithms-rule-how-we-see-the-world-good-luck-trying-to-stop-them-11610884800) - and it seems like we've lost our individual ability to control these incredibly intricate systems. 
