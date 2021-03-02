@@ -3,7 +3,9 @@
 ![Image](https://github.com/shomilj/feeds-react-native/blob/master/docs/screens.jpg?raw=true)
 
 Contributors: [Niky Arora](https://www.linkedin.com/in/nikhararora/) & [Shomil Jain](https://www.linkedin.com/in/shomiljain/)
+
 Video Demo: https://www.youtube.com/embed/kAC-ixuRSv4
+
 Backend Project: https://github.com/shomilj/feeds-backend
 
 ## Inspiration
